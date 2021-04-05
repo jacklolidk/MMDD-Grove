@@ -23,7 +23,7 @@ input.onButtonPressed(Button.B, function () {
 basic.forever(function () {
     if (disabled == 0) {
         if (time_is_set == 0) {
-            timeanddate.setTime(11, 59, 0, timeanddate.MornNight.PM)
+            timeanddate.setTime(11, 30, 0, timeanddate.MornNight.PM)
         }
         time_is_set = 1
         time_raw = timeanddate.time(timeanddate.TimeFormat.HHMM24hr)
@@ -37,6 +37,5 @@ basic.forever(function () {
         scren = grove.createDisplay(DigitalPin.P0, DigitalPin.P14)
         scren.point(true)
         scren.show(time_final)
-        basic.showString("" + (time_final))
     }
 })
