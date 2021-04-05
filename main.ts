@@ -26,18 +26,14 @@ basic.forever(function () {
             timeanddate.setTime(11, 59, 0, timeanddate.MornNight.PM)
         }
         time_is_set = 1
-        basic.pause(200)
         time_raw = timeanddate.time(timeanddate.TimeFormat.HHMM24hr)
-        basic.pause(200)
         time_lol = parseFloat(timeanddate.time(timeanddate.TimeFormat.HHMM24hr))
         time_lol_x100 = time_lol * 100
         if (time_lol == 0) {
             time_lol_x100 = 2400
         }
         time_lol_2 = parseFloat(time_raw.substr(3, 2))
-        basic.pause(200)
         time_final = time_lol_x100 + time_lol_2
-        basic.pause(1000)
         scren = grove.createDisplay(DigitalPin.P0, DigitalPin.P14)
         scren.point(true)
         scren.show(time_final)
